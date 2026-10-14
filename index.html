@@ -12,6 +12,33 @@ body{margin:0;background:#F7F6F2}
 html{scroll-behavior:smooth}
 img{max-width:100%}
 a{color:#1E3B34}a:hover{color:#122520}
+:focus-visible{outline:2px solid #1E3B34;outline-offset:3px}
+/* nav dropdown */
+.navdrop{position:relative}
+.navdrop>summary{list-style:none;cursor:pointer;font-size:15px;font-weight:500;color:#2C322F;display:inline-flex;align-items:center;gap:6px;min-height:44px}
+.navdrop>summary::-webkit-details-marker{display:none}
+.navdrop>summary svg{transition:transform .2s}
+.navdrop[open]>summary svg{transform:rotate(180deg)}
+.navdrop-panel{position:absolute;top:calc(100% + 6px);left:-16px;z-index:20;min-width:280px;background:#FFFFFF;border:1px solid #E2DFD7;border-radius:12px;box-shadow:0 14px 34px rgba(27,31,29,.12);padding:8px;display:flex;flex-direction:column}
+.navdrop-panel a{text-decoration:none;color:#1B1F1D;padding:12px 14px;border-radius:8px;display:flex;justify-content:space-between;gap:16px;font-size:15px}
+.navdrop-panel a span{color:#5B625E;font-size:14px;white-space:nowrap}
+.navdrop-panel a:hover{background:#F1F2EE}
+.navdrop-panel hr{border:0;border-top:1px solid #E2DFD7;margin:6px 8px}
+@media (max-width:640px){.navdrop-panel{left:auto;right:-8px;min-width:250px}}
+/* services accordion */
+.svc{border-bottom:1px solid #D6D3CA}
+.svc>summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) auto 28px;align-items:center;gap:24px;padding:28px 0}
+.svc>summary::-webkit-details-marker{display:none}
+.svc>summary:hover h3{color:#1E3B34}
+.svc-chev{width:28px;height:28px;border-radius:50%;border:1px solid #B9B6AC;display:inline-flex;align-items:center;justify-content:center;transition:transform .2s,background .2s}
+.svc[open] .svc-chev{transform:rotate(45deg);background:#1E3B34;border-color:#1E3B34;color:#FFFFFF}
+.svc-fee{font-weight:600;font-size:16px;white-space:nowrap}
+.svc-body{padding:0 52px 36px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px;color:#3D4440;font-size:16px}
+.svc-body h4{margin:0 0 8px;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#4A5A53}
+.svc-body p{margin:0}
+.svc-body ul{margin:0;padding-left:18px}
+@media (max-width:640px){.svc>summary{grid-template-columns:minmax(0,1fr) 28px}.svc-fee{grid-column:1;grid-row:2;font-size:15px}.svc-chev{grid-column:2;grid-row:1}.svc-body{padding-right:0}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
@@ -27,7 +54,17 @@ a{color:#1E3B34}a:hover{color:#122520}
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 28px">
 <a href="#about" style="text-decoration: none; font-size: 15px; font-weight: 500; color: #2C322F">About</a>
 <a href="#who" style="text-decoration: none; font-size: 15px; font-weight: 500; color: #2C322F">Who I Help</a>
-<a href="#services" style="text-decoration: none; font-size: 15px; font-weight: 500; color: #2C322F">Services &amp; Fees</a>
+<details class="navdrop">
+<summary>Services &amp; Fees <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></summary>
+<div class="navdrop-panel">
+<a href="#svc-individual">Individual Therapy <span>[FEE]</span></a>
+<a href="#svc-couples">Couples Therapy <span>[FEE]</span></a>
+<a href="#svc-coaching">Performance Coaching <span>from [FEE]</span></a>
+<a href="#svc-orgs">For Organizations <span>Inquire</span></a>
+<hr>
+<a href="#services">Fees &amp; insurance info</a>
+</div>
+</details>
 <a href="#faq" style="text-decoration: none; font-size: 15px; font-weight: 500; color: #2C322F">FAQ</a>
 <a href="https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=D924F5FC70B841BEBC1A0A031C487116" target="_blank" rel="noopener" style="text-decoration: none; font-size: 15px; font-weight: 600; color: #FFFFFF; background: #1E3B34; padding: 12px 22px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Book a free consult</a>
 </div>
@@ -131,31 +168,52 @@ a{color:#1E3B34}a:hover{color:#122520}
 </div>
 <p style="margin: 0; max-width: 420px; font-size: 15px; color: #4A514D">Private-pay practice. HSA/FSA accepted. Superbills provided for out-of-network reimbursement.</p>
 </div>
-<div style="margin-top: 56px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 0; border-top: 1px solid #D6D3CA">
-<div style="padding: 32px 28px 32px 0; border-bottom: 1px solid #D6D3CA; display: flex; flex-direction: column; gap: 10px">
-<span style="font-size: 13px; font-weight: 600; color: #5B625E">01</span>
-<h3 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 26px">Individual Therapy</h3>
-<p style="margin: 0; color: #4A514D; font-size: 16px">Trauma, grief, anxiety, burnout and major life transitions.</p>
-<p style="margin: 8px 0 0; font-weight: 600">[FEE] / 53-minute session</p>
+<div style="margin-top: 48px; border-top: 1px solid #D6D3CA">
+<details class="svc" id="svc-individual" open>
+<summary>
+<div style="min-width: 0"><h3 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 28px; line-height: 1.2">Individual Therapy</h3><p style="margin: 4px 0 0; color: #4A514D; font-size: 16px">Trauma, grief, anxiety, burnout and major life transitions.</p></div>
+<span class="svc-fee">[FEE] / session</span>
+<span class="svc-chev" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 1.5v9M1.5 6h9"/></svg></span>
+</summary>
+<div class="svc-body">
+<div><h4>Who it's for</h4><p>Adults carrying trauma, loss, chronic stress or the weight of a high-pressure career, including first responders, veterans and healthcare professionals.</p></div>
+<div><h4>What to expect</h4><ul><li>A collaborative, practical approach built around you</li><li>Attention to mind and body, not just symptoms</li><li>Pacing that respects where you are</li></ul></div>
+<div><h4>Format &amp; fee</h4><p>Secure video sessions for clients in Massachusetts and New Hampshire.</p><p style="margin-top: 8px; font-weight: 600; color: #1B1F1D">[FEE] per [LENGTH]-minute session</p><a href="https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=D924F5FC70B841BEBC1A0A031C487116" target="_blank" rel="noopener" style="margin-top: 16px; text-decoration: none; font-weight: 600; font-size: 15px; color: #FFFFFF; background: #1E3B34; padding: 12px 20px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Book a free consult</a></div>
 </div>
-<div style="padding: 32px 28px 32px 0; border-bottom: 1px solid #D6D3CA; display: flex; flex-direction: column; gap: 10px">
-<span style="font-size: 13px; font-weight: 600; color: #5B625E">02</span>
-<h3 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 26px">Couples Therapy</h3>
-<p style="margin: 0; color: #4A514D; font-size: 16px">For partners navigating stress, loss, shift work and the strain of demanding careers.</p>
-<p style="margin: 8px 0 0; font-weight: 600">[FEE] / session</p>
+</details><details class="svc" id="svc-couples">
+<summary>
+<div style="min-width: 0"><h3 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 28px; line-height: 1.2">Couples Therapy</h3><p style="margin: 4px 0 0; color: #4A514D; font-size: 16px">For partners navigating stress, loss and demanding careers.</p></div>
+<span class="svc-fee">[FEE] / session</span>
+<span class="svc-chev" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 1.5v9M1.5 6h9"/></svg></span>
+</summary>
+<div class="svc-body">
+<div><h4>Who it's for</h4><p>Partners feeling the strain of shift work, trauma exposure, grief, life transitions or simply growing apart under pressure.</p></div>
+<div><h4>What to expect</h4><ul><li>Space for both partners to be heard</li><li>Practical tools for communication and reconnection</li><li>Support around how one partner's work affects the relationship</li></ul></div>
+<div><h4>Format &amp; fee</h4><p>Secure video sessions for couples in Massachusetts and New Hampshire.</p><p style="margin-top: 8px; font-weight: 600; color: #1B1F1D">[FEE] per [LENGTH]-minute session</p><a href="https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=D924F5FC70B841BEBC1A0A031C487116" target="_blank" rel="noopener" style="margin-top: 16px; text-decoration: none; font-weight: 600; font-size: 15px; color: #FFFFFF; background: #1E3B34; padding: 12px 20px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Book a free consult</a></div>
 </div>
-<div style="padding: 32px 28px 32px 0; border-bottom: 1px solid #D6D3CA; display: flex; flex-direction: column; gap: 10px">
-<span style="font-size: 13px; font-weight: 600; color: #5B625E">03</span>
-<h3 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 26px">Performance Coaching</h3>
-<p style="margin: 0; color: #4A514D; font-size: 16px">Non-clinical coaching to build resilience, sharpen focus and perform without burning out.</p>
-<p style="margin: 8px 0 0; font-weight: 600">Packages from [FEE]</p>
+</details><details class="svc" id="svc-coaching">
+<summary>
+<div style="min-width: 0"><h3 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 28px; line-height: 1.2">Performance Coaching</h3><p style="margin: 4px 0 0; color: #4A514D; font-size: 16px">Non-clinical coaching for resilience, focus and sustainable performance.</p></div>
+<span class="svc-fee">from [FEE]</span>
+<span class="svc-chev" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 1.5v9M1.5 6h9"/></svg></span>
+</summary>
+<div class="svc-body">
+<div><h4>Who it's for</h4><p>Leaders, high achievers and professionals who want to perform at their best without sacrificing their well-being.</p></div>
+<div><h4>What to expect</h4><ul><li>Building resilience and focus</li><li>Navigating change and high-stakes decisions</li><li>Sustainable habits that prevent burnout</li></ul></div>
+<div><h4>Format &amp; fee</h4><p>Coaching is non-clinical and is not therapy. Sessions are held by secure video.</p><p style="margin-top: 8px; font-weight: 600; color: #1B1F1D">Packages from [FEE]</p><a href="https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=D924F5FC70B841BEBC1A0A031C487116" target="_blank" rel="noopener" style="margin-top: 16px; text-decoration: none; font-weight: 600; font-size: 15px; color: #FFFFFF; background: #1E3B34; padding: 12px 20px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Book a free consult</a></div>
 </div>
-<div style="padding: 32px 28px 32px 0; border-bottom: 1px solid #D6D3CA; display: flex; flex-direction: column; gap: 10px">
-<span style="font-size: 13px; font-weight: 600; color: #5B625E">04</span>
-<h3 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 26px">For Organizations</h3>
-<p style="margin: 0; color: #4A514D; font-size: 16px">Training and wellness workshops for fire, EMS, police and hospital teams.</p>
-<p style="margin: 8px 0 0; font-weight: 600">Inquire for pricing</p>
+</details><details class="svc" id="svc-orgs">
+<summary>
+<div style="min-width: 0"><h3 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 28px; line-height: 1.2">For Organizations</h3><p style="margin: 4px 0 0; color: #4A514D; font-size: 16px">Training and wellness support for first-responder and healthcare teams.</p></div>
+<span class="svc-fee">Inquire</span>
+<span class="svc-chev" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 1.5v9M1.5 6h9"/></svg></span>
+</summary>
+<div class="svc-body">
+<div><h4>Who it's for</h4><p>Fire departments, EMS agencies, police departments, dispatch centers and hospital teams.</p></div>
+<div><h4>What to expect</h4><ul><li>Training and workshops shaped by 20+ years in the field</li><li>Stress, resilience and wellness topics for high-pressure teams</li><li>Formats tailored to your team and schedule</li></ul></div>
+<div><h4>Format &amp; fee</h4><p>Delivered virtually or on-site by arrangement.</p><p style="margin-top: 8px; font-weight: 600; color: #1B1F1D">Contact for pricing</p><a href="https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=D924F5FC70B841BEBC1A0A031C487116" target="_blank" rel="noopener" style="margin-top: 16px; text-decoration: none; font-weight: 600; font-size: 15px; color: #FFFFFF; background: #1E3B34; padding: 12px 20px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Book a free consult</a></div>
 </div>
+</details>
 </div>
 </div>
 </section>
@@ -214,5 +272,20 @@ a{color:#1E3B34}a:hover{color:#122520}
 </footer>
 
 </div>
+<script>
+(function(){
+  var drop=document.querySelector('.navdrop');
+  function openTarget(){
+    var el=location.hash&&document.getElementById(location.hash.slice(1));
+    if(el&&el.classList.contains('svc')){el.open=true;}
+  }
+  document.querySelectorAll('.navdrop-panel a').forEach(function(a){
+    a.addEventListener('click',function(){drop.open=false;setTimeout(openTarget,0);});
+  });
+  document.addEventListener('click',function(e){if(drop.open&&!drop.contains(e.target))drop.open=false;});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&drop.open){drop.open=false;drop.querySelector('summary').focus();}});
+  window.addEventListener('hashchange',openTarget);openTarget();
+})();
+</script>
 </body>
 </html>
