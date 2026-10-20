@@ -27,17 +27,16 @@ a{color:#1E3B34}a:hover{color:#122520}
 @media (max-width:640px){.navdrop-panel{left:auto;right:-8px;min-width:250px}}
 /* services accordion */
 .svc{border-bottom:1px solid #D6D3CA}
-.svc>summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) auto 28px;align-items:center;gap:24px;padding:28px 0}
+.svc>summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) 28px;align-items:center;gap:24px;padding:28px 0}
 .svc>summary::-webkit-details-marker{display:none}
 .svc>summary:hover h3{color:#1E3B34}
 .svc-chev{width:28px;height:28px;border-radius:50%;border:1px solid #B9B6AC;display:inline-flex;align-items:center;justify-content:center;transition:transform .2s,background .2s}
 .svc[open] .svc-chev{transform:rotate(45deg);background:#1E3B34;border-color:#1E3B34;color:#FFFFFF}
-.svc-fee{font-weight:600;font-size:16px;white-space:nowrap}
 .svc-body{padding:0 52px 36px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px;color:#3D4440;font-size:16px}
 .svc-body h4{margin:0 0 8px;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#4A5A53}
 .svc-body p{margin:0}
 .svc-body ul{margin:0;padding-left:18px}
-@media (max-width:640px){.svc>summary{grid-template-columns:minmax(0,1fr) 28px}.svc-fee{grid-column:1;grid-row:2;font-size:15px}.svc-chev{grid-column:2;grid-row:1}.svc-body{padding-right:0}}
+@media (max-width:640px){.svc-body{padding-right:0}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -49,20 +48,18 @@ a{color:#1E3B34}a:hover{color:#122520}
 <nav aria-label="Main" style="max-width: 1200px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
 <a href="#top" style="text-decoration: none; display: flex; flex-direction: column; line-height: 1.1">
 <span style="font-family: 'Newsreader', Georgia, serif; font-size: 26px; font-weight: 500; color: #1B1F1D; letter-spacing: -0.01em">Zendurance Wellness</span>
-<span style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #5B625E">Meghan Fanning, LMHC</span>
+<span style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #5B625E">Meghan Fanning MA, NRP, LMHC/LCMHC</span>
 </a>
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 28px">
 <a href="#about" style="text-decoration: none; font-size: 15px; font-weight: 500; color: #2C322F">About</a>
 <a href="#who" style="text-decoration: none; font-size: 15px; font-weight: 500; color: #2C322F">Who I Help</a>
 <details class="navdrop">
-<summary>Services &amp; Fees <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></summary>
+<summary>Services <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></summary>
 <div class="navdrop-panel">
-<a href="#svc-individual">Individual Therapy <span>[FEE]</span></a>
-<a href="#svc-couples">Couples Therapy <span>[FEE]</span></a>
-<a href="#svc-coaching">Performance Coaching <span>from [FEE]</span></a>
-<a href="#svc-orgs">For Organizations <span>Inquire</span></a>
-<hr>
-<a href="#services">Fees &amp; insurance info</a>
+<a href="#svc-individual">Individual Therapy</a>
+<a href="#svc-couples">Couples Therapy</a>
+<a href="#svc-psychedelic">Psychedelic-Assisted Therapy</a>
+<a href="#svc-coaching">Performance Coaching</a>
 </div>
 </details>
 <a href="#faq" style="text-decoration: none; font-size: 15px; font-weight: 500; color: #2C322F">FAQ</a>
@@ -87,7 +84,7 @@ a{color:#1E3B34}a:hover{color:#122520}
 <img src="meghan.jpg" alt="Meghan Fanning, licensed mental health counselor" width="880" height="1100" style="display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; border-radius: 220px 220px 16px 16px; background: #D9DED6">
 <div style="position: absolute; left: -16px; bottom: 28px; background: #FFFFFF; border-radius: 12px; padding: 16px 20px; box-shadow: 0 10px 30px rgba(27,31,29,0.10); max-width: 260px">
 <div style="font-family: 'Newsreader', Georgia, serif; font-size: 20px; line-height: 1.2">Meghan Fanning</div>
-<div style="font-size: 13px; color: #5B625E; margin-top: 4px">MA, NRP, LMHC / LCMHC</div>
+<div style="font-size: 13px; color: #5B625E; margin-top: 4px">MA, NRP, LMHC/LCMHC</div>
 </div>
 </div>
 </div>
@@ -163,55 +160,50 @@ a{color:#1E3B34}a:hover{color:#122520}
 <div style="max-width: 1200px; margin: 0 auto; padding: 112px 24px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px">
 <div style="max-width: 640px">
-<p style="margin: 0 0 20px; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #4A5A53">Services &amp; Fees</p>
+<p style="margin: 0 0 20px; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #4A5A53">Services</p>
 <h2 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: clamp(34px, 4vw, 52px); line-height: 1.1; letter-spacing: -0.015em">Ways to work together</h2>
 </div>
-<p style="margin: 0; max-width: 420px; font-size: 15px; color: #4A514D">Private-pay practice. HSA/FSA accepted. Superbills provided for out-of-network reimbursement.</p>
 </div>
 <div style="margin-top: 48px; border-top: 1px solid #D6D3CA">
 <details class="svc" id="svc-individual" open>
 <summary>
 <div style="min-width: 0"><h3 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 28px; line-height: 1.2">Individual Therapy</h3><p style="margin: 4px 0 0; color: #4A514D; font-size: 16px">Trauma, grief, anxiety, burnout and major life transitions.</p></div>
-<span class="svc-fee">[FEE] / session</span>
 <span class="svc-chev" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 1.5v9M1.5 6h9"/></svg></span>
 </summary>
 <div class="svc-body">
 <div><h4>Who it's for</h4><p>Adults carrying trauma, loss, chronic stress or the weight of a high-pressure career, including first responders, veterans and healthcare professionals.</p></div>
 <div><h4>What to expect</h4><ul><li>A collaborative, practical approach built around you</li><li>Attention to mind and body, not just symptoms</li><li>Pacing that respects where you are</li></ul></div>
-<div><h4>Format &amp; fee</h4><p>Secure video sessions for clients in Massachusetts and New Hampshire.</p><p style="margin-top: 8px; font-weight: 600; color: #1B1F1D">[FEE] per [LENGTH]-minute session</p><a href="https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=D924F5FC70B841BEBC1A0A031C487116" target="_blank" rel="noopener" style="margin-top: 16px; text-decoration: none; font-weight: 600; font-size: 15px; color: #FFFFFF; background: #1E3B34; padding: 12px 20px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Book a free consult</a></div>
+<div><h4>Format</h4><p>Secure video sessions for clients in Massachusetts and New Hampshire.</p><a href="https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=D924F5FC70B841BEBC1A0A031C487116" target="_blank" rel="noopener" style="margin-top: 16px; text-decoration: none; font-weight: 600; font-size: 15px; color: #FFFFFF; background: #1E3B34; padding: 12px 20px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Book a free consult</a></div>
 </div>
 </details><details class="svc" id="svc-couples">
 <summary>
 <div style="min-width: 0"><h3 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 28px; line-height: 1.2">Couples Therapy</h3><p style="margin: 4px 0 0; color: #4A514D; font-size: 16px">For partners navigating stress, loss and demanding careers.</p></div>
-<span class="svc-fee">[FEE] / session</span>
 <span class="svc-chev" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 1.5v9M1.5 6h9"/></svg></span>
 </summary>
 <div class="svc-body">
 <div><h4>Who it's for</h4><p>Partners feeling the strain of shift work, trauma exposure, grief, life transitions or simply growing apart under pressure.</p></div>
 <div><h4>What to expect</h4><ul><li>Space for both partners to be heard</li><li>Practical tools for communication and reconnection</li><li>Support around how one partner's work affects the relationship</li></ul></div>
-<div><h4>Format &amp; fee</h4><p>Secure video sessions for couples in Massachusetts and New Hampshire.</p><p style="margin-top: 8px; font-weight: 600; color: #1B1F1D">[FEE] per [LENGTH]-minute session</p><a href="https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=D924F5FC70B841BEBC1A0A031C487116" target="_blank" rel="noopener" style="margin-top: 16px; text-decoration: none; font-weight: 600; font-size: 15px; color: #FFFFFF; background: #1E3B34; padding: 12px 20px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Book a free consult</a></div>
+<div><h4>Format</h4><p>Secure video sessions for couples in Massachusetts and New Hampshire.</p><a href="https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=D924F5FC70B841BEBC1A0A031C487116" target="_blank" rel="noopener" style="margin-top: 16px; text-decoration: none; font-weight: 600; font-size: 15px; color: #FFFFFF; background: #1E3B34; padding: 12px 20px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Book a free consult</a></div>
+</div>
+</details><details class="svc" id="svc-psychedelic">
+<summary>
+<div style="min-width: 0"><h3 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 28px; line-height: 1.2">Psychedelic-Assisted Therapy</h3><p style="margin: 4px 0 0; color: #4A514D; font-size: 16px">Preparation and integration support for psychedelic experiences.</p></div>
+<span class="svc-chev" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 1.5v9M1.5 6h9"/></svg></span>
+</summary>
+<div class="svc-body">
+<div><h4>Who it's for</h4><p>Adults exploring psychedelic-assisted healing for trauma, grief, depression or burnout, and those making sense of a past psychedelic experience.</p></div>
+<div><h4>What to expect</h4><ul><li>Preparation: intentions, safety and what to expect</li><li>Integration: turning insight into lasting change</li><li>A grounded, trauma-informed space for mind and body</li></ul></div>
+<div><h4>Format</h4><p>Secure video sessions for clients in Massachusetts and New Hampshire.</p><a href="https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=D924F5FC70B841BEBC1A0A031C487116" target="_blank" rel="noopener" style="margin-top: 16px; text-decoration: none; font-weight: 600; font-size: 15px; color: #FFFFFF; background: #1E3B34; padding: 12px 20px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Book a free consult</a></div>
 </div>
 </details><details class="svc" id="svc-coaching">
 <summary>
 <div style="min-width: 0"><h3 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 28px; line-height: 1.2">Performance Coaching</h3><p style="margin: 4px 0 0; color: #4A514D; font-size: 16px">Non-clinical coaching for resilience, focus and sustainable performance.</p></div>
-<span class="svc-fee">from [FEE]</span>
 <span class="svc-chev" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 1.5v9M1.5 6h9"/></svg></span>
 </summary>
 <div class="svc-body">
 <div><h4>Who it's for</h4><p>Leaders, high achievers and professionals who want to perform at their best without sacrificing their well-being.</p></div>
 <div><h4>What to expect</h4><ul><li>Building resilience and focus</li><li>Navigating change and high-stakes decisions</li><li>Sustainable habits that prevent burnout</li></ul></div>
-<div><h4>Format &amp; fee</h4><p>Coaching is non-clinical and is not therapy. Sessions are held by secure video.</p><p style="margin-top: 8px; font-weight: 600; color: #1B1F1D">Packages from [FEE]</p><a href="https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=D924F5FC70B841BEBC1A0A031C487116" target="_blank" rel="noopener" style="margin-top: 16px; text-decoration: none; font-weight: 600; font-size: 15px; color: #FFFFFF; background: #1E3B34; padding: 12px 20px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Book a free consult</a></div>
-</div>
-</details><details class="svc" id="svc-orgs">
-<summary>
-<div style="min-width: 0"><h3 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 28px; line-height: 1.2">For Organizations</h3><p style="margin: 4px 0 0; color: #4A514D; font-size: 16px">Training and wellness support for first-responder and healthcare teams.</p></div>
-<span class="svc-fee">Inquire</span>
-<span class="svc-chev" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 1.5v9M1.5 6h9"/></svg></span>
-</summary>
-<div class="svc-body">
-<div><h4>Who it's for</h4><p>Fire departments, EMS agencies, police departments, dispatch centers and hospital teams.</p></div>
-<div><h4>What to expect</h4><ul><li>Training and workshops shaped by 20+ years in the field</li><li>Stress, resilience and wellness topics for high-pressure teams</li><li>Formats tailored to your team and schedule</li></ul></div>
-<div><h4>Format &amp; fee</h4><p>Delivered virtually or on-site by arrangement.</p><p style="margin-top: 8px; font-weight: 600; color: #1B1F1D">Contact for pricing</p><a href="https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=D924F5FC70B841BEBC1A0A031C487116" target="_blank" rel="noopener" style="margin-top: 16px; text-decoration: none; font-weight: 600; font-size: 15px; color: #FFFFFF; background: #1E3B34; padding: 12px 20px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Book a free consult</a></div>
+<div><h4>Format</h4><p>Coaching is non-clinical and is not therapy. Sessions are held by secure video.</p><a href="https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=D924F5FC70B841BEBC1A0A031C487116" target="_blank" rel="noopener" style="margin-top: 16px; text-decoration: none; font-weight: 600; font-size: 15px; color: #FFFFFF; background: #1E3B34; padding: 12px 20px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Book a free consult</a></div>
 </div>
 </details>
 </div>
@@ -246,8 +238,9 @@ a{color:#1E3B34}a:hover{color:#122520}
 <div style="max-width: 1200px; margin: 0 auto; background: #1B1F1D; color: #F3F1EA; border-radius: 24px; padding: 72px 56px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 32px; box-sizing: border-box">
 <div style="flex: 1 1 480px; min-width: 0">
 <h2 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.15; color: #FFFFFF">You've taken care of everyone else. Let's make room for you.</h2>
+<p style="margin: 16px 0 0; font-size: 17px; color: #D6DBD6">Email Meghan to schedule a time: <span style="color: #FFFFFF; font-weight: 600; user-select: all; overflow-wrap: anywhere">zendurancewellnessllc@gmail.com</span></p>
 </div>
-<a href="https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=D924F5FC70B841BEBC1A0A031C487116" target="_blank" rel="noopener" style="text-decoration: none; font-weight: 600; font-size: 16px; color: #1B1F1D; background: #F3F1EA; padding: 18px 30px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Book a free 15-minute consult</a>
+<a href="mailto:zendurancewellnessllc@gmail.com?subject=Scheduling%20a%20time" style="text-decoration: none; font-weight: 600; font-size: 16px; color: #1B1F1D; background: #F3F1EA; padding: 18px 30px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Schedule a time</a>
 </div>
 </section>
 
@@ -256,7 +249,7 @@ a{color:#1E3B34}a:hover{color:#122520}
 <div style="max-width: 1200px; margin: 0 auto; padding: 56px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; font-size: 15px; color: #4A514D">
 <div style="flex: 1 1 280px; min-width: 0">
 <div style="font-family: 'Newsreader', Georgia, serif; font-size: 22px; color: #1B1F1D">Zendurance Wellness</div>
-<p style="margin: 8px 0 0">Meghan Fanning, MA, NRP, LMHC / LCMHC<br>Telehealth for clients in Massachusetts &amp; New Hampshire</p>
+<p style="margin: 8px 0 0">Meghan Fanning MA, NRP, LMHC/LCMHC<br>Telehealth for clients in Massachusetts &amp; New Hampshire</p>
 </div>
 <div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
 <a href="mailto:hello@zendurancewellness.com">hello@zendurancewellness.com</a>
